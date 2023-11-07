@@ -1,0 +1,32 @@
+.book {
+    padding: 20px;
+    height: 500px; /* Set a fixed height (adjust as needed) */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+  
+.book img {
+    max-height: 80%; /* Adjust the maximum image height as needed */
+    transition: transform 0.4s ease, box-shadow 0.3s ease; /* Add a smooth transition for the transform property */
+
+    &:hover {
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.7); /* Apply a shadow on hover */
+        transform: translateY(-15px); /* Lift the book on hover */
+    }
+}
+
+.inactive {
+    opacity: 0.6; /* Reduce the opacity for an inactive appearance */
+    pointer-events: none; /* Disable pointer events for inactive books */
+}
+
+.rented-info {
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px; /* Adjust the font size as needed */
+    font-family: 'Open Sans', sans-serif; /* Specify the font here */
+}

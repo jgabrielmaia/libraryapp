@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Book Management</h1>
+  
+    <!-- Add New Book Form -->
+    <div class="add-book-form">
+      <form (ngSubmit)="onAddNewBook()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+  
+        <label for="author">Author:</label>
+        <input type="text" id="author" formControlName="author">
+  
+        <label for="cover">Cover Image:</label>
+        <input type="text" id="cover" formControlName="cover">
+  
+        <button type="submit">Add Book</button>
+      </form>
+    </div>
+  
+    <div class="book-collection">
+      <table>
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Rented</th>
+            <th>Last Rented Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td><img class="book-cover" [src]="book.cover" alt="{{book.name}} from {{book.author}}"></td>
+            <td>{{ book.name }}</td>
+            <td>{{ book.author }}</td>
+            <td><input type="checkbox" [checked]="book.available" /></td>
+            <td>{{ book.lastRentedDate | date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="edit-book-form">
+      <form (ngSubmit)="onSaveBook()">
+        <!-- Your form fields go here -->
+        <button type="submit">Save</button>
+      </form>
+      <button class="floating-save-button" (click)="onSaveBook()"><i class="fa fa-save"></i></button>
+    </div>
+    
+  </div>

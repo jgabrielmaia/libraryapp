@@ -1,0 +1,83 @@
+.book-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  flex: 1;
+  width: 100%;
+  text-align: center;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc; /* Add borders to cells */
+}
+
+.book-cover {
+  max-width: 120px; /* Adjust the maximum width of the book cover image */
+}
+
+.add-book-form {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.add-book-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-book-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-book-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.add-book-form button:hover {
+  background-color: #0056b3;
+}
+
+.edit-book-form {
+  position: relative;
+}
+
+.floating-save-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  position: fixed;
+  bottom: 20px;
+  right: 50%; /* Center horizontally */
+  transform: translateX(50%); /* Center horizontally */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.floating-save-button:hover {
+  background-color: #0056b3;
+}
