@@ -1,5 +1,9 @@
 <div class="book" [ngClass]="{'inactive': !book.available}" (click)="openRentModal()">
-    <img [src]="book.cover" alt="{{book.name}} from {{book.author}}">
-    <div *ngIf="!book.available && book.lastRentedDate" class="rented-info">Rented in {{ formatUtcTimestamp(book.lastRentedDate) | date: 'yyyy-MM-dd' }}</div>
+    <img [src]="book.cover" alt="{{book.name}} by {{book.author}}">
+    <div class="book-details">
+        <div class="book-title">{{book.name}}</div>
+        <div class="book-author">by {{book.author}}</div>
+        <div *ngIf="!book.available && book.lastRentedDate" class="rented-info">Rented in {{ formatUtcTimestamp(book.lastRentedDate) | date: 'yyyy-MM-dd' }}</div>
+    </div>
 </div>
   

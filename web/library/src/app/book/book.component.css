@@ -1,6 +1,7 @@
 .book {
     padding: 20px;
     height: 500px; /* Set a fixed height (adjust as needed) */
+    max-width: min-content;
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,9 +25,25 @@
 }
 
 .rented-info {
-    padding: 5px;
     font-weight: bold;
-    text-align: center;
     font-size: 18px; /* Adjust the font size as needed */
     font-family: 'Open Sans', sans-serif; /* Specify the font here */
+    color: brown;
+}
+
+.book .book-details {
+    padding: 5px;
+    padding-left: 0px;
+    font-weight: bold;
+    align-items: self-start;
+}
+
+.book .book-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.book .book-author {
+    font-size: 1rem;
+    color: #555;
 }
