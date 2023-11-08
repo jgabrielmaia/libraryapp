@@ -19,9 +19,9 @@ public class Book
     [BsonElement("available")]
     public bool Available { get; set; }
     
-    [BsonElement("lastRentedDate")]
-    public DateTime LastRentedDate { get; set; }
+    [BsonElement("lastReservedDate")]
+    public DateTime LastReservedDate { get; set; }
 
-    [BsonElement("rentedBy")]
-    public string RentedBy { get; set; }
+    [BsonElement("reservedBy")]
+    public string ReservedBy { get; set; }
 }

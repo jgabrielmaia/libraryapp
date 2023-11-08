@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RentModalComponent } from './rent-modal/rent-modal.component';
+import { ReserveModalComponent } from './reserve-modal/reserve-modal.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     BookComponent,
     BookManagementComponent,
     LibraryComponent,
-    RentModalComponent,
+    ReserveModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,8 +19,8 @@ export class BookManagementComponent implements OnInit {
       url: [''],
       cover: [''],
       available: [true],
-      lastRentedDate: [null],
-      rentedBy: [''],
+      lastReservedDate: [null],
+      reservedBy: [''],
     });
   }
 

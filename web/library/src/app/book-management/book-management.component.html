@@ -25,8 +25,8 @@
             <th>Name</th>
             <th>Author</th>
             <th>Available</th>
-            <th>Last Rented Date</th>
-            <th>Last Rented By</th>
+            <th>Last Reserved Date</th>
+            <th>Last Reserved By</th>
           </tr>
         </thead>
         <tbody>
@@ -35,8 +35,8 @@
             <td>{{ book.name }}</td>
             <td>{{ book.author }}</td>
             <td><input type="checkbox" [checked]="book.available" /></td>
-            <td>{{ book.lastRentedDate | date }}</td>
-            <td>{{ book.rentedBy }}</td>
+            <td>{{ book.lastReservedDate | date }}</td>
+            <td>{{ book.reservedBy }}</td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,19 @@
+<div class="reserve-modal">
+    <h1 mat-dialog-title>Reserve the book 
+        <div class="book-details">
+            <h1>{{data.book.name}}</h1> 
+            <h3>by {{data.book.author}}</h3>
+        </div>
+    </h1>
+    <div mat-dialog-content>Please, provide your email below</div>
+    <div mat-dialog-content>
+        <mat-form-field [style.width.px]=250>
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="email" type="email"/>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" (click)="reserveBook()">Reserve</button>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+    </div>
+</div>
