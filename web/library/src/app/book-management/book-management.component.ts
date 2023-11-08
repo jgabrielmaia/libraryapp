@@ -20,6 +20,7 @@ export class BookManagementComponent implements OnInit {
       cover: [''],
       available: [true],
       lastRentedDate: [null],
+      rentedBy: [''],
     });
   }
 

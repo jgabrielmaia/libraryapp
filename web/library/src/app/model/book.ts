@@ -5,4 +5,5 @@ export interface Book {
     cover: string;
     available: boolean;
     lastRentedDate?: number;
+    rentedBy?: string;
 }

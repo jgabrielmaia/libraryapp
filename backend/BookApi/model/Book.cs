@@ -21,4 +21,7 @@ public class Book
     
     [BsonElement("lastRentedDate")]
     public DateTime LastRentedDate { get; set; }
+
+    [BsonElement("rentedBy")]
+    public string RentedBy { get; set; }
 }

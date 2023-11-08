@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Book Management</h1>
+    <h1 class="title">Book Management</h1>
   
     <!-- Add New Book Form -->
     <div class="add-book-form">
@@ -26,6 +26,7 @@
             <th>Author</th>
             <th>Rented</th>
             <th>Last Rented Date</th>
+            <th>Last Rented By</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@
             <td>{{ book.author }}</td>
             <td><input type="checkbox" [checked]="book.available" /></td>
             <td>{{ book.lastRentedDate | date }}</td>
+            <td>{{ book.rentedBy }}</td>
           </tr>
         </tbody>
       </table>
