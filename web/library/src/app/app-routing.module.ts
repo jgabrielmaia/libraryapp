@@ -5,7 +5,7 @@ import { LibraryComponent } from './library/library.component';
 
 const routes: Routes = [
   { path: '', component: LibraryComponent }, // Define the main route
-  { path: 'management', component: BookManagementComponent },
+  { path: 'manage', component: BookManagementComponent },
 ];
 
 @NgModule({
