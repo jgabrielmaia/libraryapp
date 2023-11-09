@@ -42,7 +42,7 @@ app.MapGet("/", (HttpContext context) =>
 
 app.MapPut("/api/books/{id}", async (string id, [FromBody] Book updatedBook) =>
 {
-    var existingBook = await collection.Find(b => b.Id == ObjectId.Parse(id)).FirstOrDefaultAsync();
+    var existingBook = await collection.Find(b => b.Id == id).FirstOrDefaultAsync();
     if (existingBook is null)
     {
         return Results.NotFound("Book not found");
@@ -55,9 +55,10 @@ app.MapPut("/api/books/{id}", async (string id, [FromBody] Book updatedBook) =>
 
 app.MapDelete("/api/books/{id}", async (string id) =>
 {
-    var result = await collection.DeleteOneAsync(b => b.Id == ObjectId.Parse(id));
+    var result = await collection.DeleteOneAsync(b => b.Id == id);
     return result.DeletedCount == 1 ? Results.NoContent() : Results.NotFound("Book not found");
 });
+
 app.UseCors();
 
 app.Run();

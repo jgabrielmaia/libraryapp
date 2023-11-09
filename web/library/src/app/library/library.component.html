@@ -1,6 +1,6 @@
 <div class="book-list-container">
     <div class="book-list">
-        <app-book *ngFor="let book of books" [book]="book"></app-book>
+        <app-book *ngFor="let book of books" [book]="book" (bookUpdated)="refreshLibrary($event)"></app-book>
     </div>
 </div>
   

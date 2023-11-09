@@ -18,7 +18,7 @@ db.books.insert([
       "https://img.bertrand.pt/images/1984-george-orwell/NDV8MjUzMjQ3NjN8MjE1NTAzNzl8MTYyOTcyOTI5MDAwMA==/500x",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "The Great Gatsby",
@@ -35,7 +35,7 @@ db.books.insert([
       "https://cdn.kobo.com/book-images/08ba5a67-f48d-420e-be8e-6de7a73b7d85/1200/1200/False/pride-prejudice-13.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "The Catcher in the Rye",
@@ -52,7 +52,7 @@ db.books.insert([
       "https://frugalbookstore.net/cdn/shop/products/sorcerer_s.jpg?v=1675226870",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "The Lord of the Rings: The Return of the King",
@@ -69,7 +69,7 @@ db.books.insert([
       "https://cdn.waterstones.com/bookjackets/large/9780/2611/9780261103344.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "Moby-Dick",
@@ -86,7 +86,7 @@ db.books.insert([
       "https://m.media-amazon.com/images/I/91Q5dCjc2KL._AC_UF1000,1000_QL80_.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "Clean Code: A Handbook of Agile Software Craftsmanship",
@@ -103,7 +103,7 @@ db.books.insert([
       "https://m.media-amazon.com/images/I/81gtKoapHFL._AC_UF1000,1000_QL80_.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "Introduction to the Theory of Computation",
@@ -144,7 +144,7 @@ db.books.insert([
       "https://m.media-amazon.com/images/I/71fCJWIx4UL._AC_UF1000,1000_QL80_.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
   {
     name: "Structure and Interpretation of Computer Programs",
@@ -170,6 +170,6 @@ db.books.insert([
       "https://m.media-amazon.com/images/I/61TX9gJwCDL._AC_UF1000,1000_QL80_.jpg",
     available: false,
     lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'Reserver@Reservingbooks.com',
+    reservedBy: 'reserver@reservingbooks.com',
   },
 ]);

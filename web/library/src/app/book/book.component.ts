@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from '../model/book'; // Import the Book interface
 import { ReserveModalComponent } from '../reserve-modal/reserve-modal.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,11 +12,7 @@ export class BookComponent {
   constructor(private dialog: MatDialog) { }
 
   @Input() book = {} as Book;
-
-  formatUtcTimestamp(utcTimestamp: number) {
-    const date = new Date(utcTimestamp);
-    return date.toISOString(); // Format as ISO date string or use a diffeReserv format
-  }
+  @Output() bookUpdated = new EventEmitter<Book>();
 
   openReserveModal() {
     const dialogRef = this.dialog.open(ReserveModalComponent, {
@@ -24,9 +20,9 @@ export class BookComponent {
       data: { book: this.book },
     });
   
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        console.log(result);
+    dialogRef.afterClosed().subscribe((updatedBook) => {
+      if (updatedBook) {
+        this.bookUpdated.emit(updatedBook);
       }
     });
   }

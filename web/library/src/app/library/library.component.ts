@@ -14,8 +14,23 @@ export class LibraryComponent {
 
   ngOnInit() {
     this.bookService.getBooks().subscribe((books: Book[]) => {
-      // Sort the books so that active books come first
-      this.books = books.sort((a, b) => (a.available === b.available ? 0 : a.available ? -1 : 1));
+      this.books = books;
+      this.orderLibrary();
     });
+  }
+
+  orderLibrary() {
+    this.books = this.books.sort((a, b) => (a.available === b.available ? 0 : a.available ? -1 : 1));
+  }
+
+  refreshLibrary(updatedBook: Book) {
+    console.log("Received event", updatedBook);
+    const index = this.books.findIndex(book => book.id === updatedBook.id);
+
+    if (index !== -1) {
+      this.books[index] = updatedBook;
+    }
+
+    this.orderLibrary();
   }
 }

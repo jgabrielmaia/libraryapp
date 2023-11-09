@@ -1,9 +1,12 @@
+import { ObjectId } from "mongodb";
+
+
 export interface Book {
-    id?: number;
+    id?: ObjectId;
     name: string;
     author: string;
     cover: string;
     available: boolean;
-    lastReservedDate?: number;
+    lastReservedDate?: string;
     reservedBy?: string;
 }

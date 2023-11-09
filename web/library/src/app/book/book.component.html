@@ -3,7 +3,7 @@
     <div class="book-details">
         <div class="book-title">{{book.name}}</div>
         <div class="book-author">by {{book.author}}</div>
-        <div *ngIf="!book.available && book.lastReservedDate" class="reserved-info">Reserved in {{ formatUtcTimestamp(book.lastReservedDate) | date: 'yyyy-MM-dd' }}</div>
+        <div *ngIf="!book.available && book.lastReservedDate" class="reserved-info">Reserved in {{ book.lastReservedDate | date: 'yyyy-MM-dd' }}</div>
     </div>
 </div>
   

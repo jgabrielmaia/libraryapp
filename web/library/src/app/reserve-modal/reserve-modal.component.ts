@@ -1,26 +1,33 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Book } from '../model/book';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-reserve-modal',
   templateUrl: './reserve-modal.component.html',
-  styleUrls: ['./reserve-modal.component.css']
+  styleUrls: ['./reserve-modal.component.css'],
 })
 export class ReserveModalComponent {
   email: string = '';
 
-  constructor(public dialogRef: MatDialogRef<ReserveModalComponent>, @Inject(MAT_DIALOG_DATA) public data: { book: Book }) {}
+  constructor(
+    public dialogRef: MatDialogRef<ReserveModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { book: Book },
+    public bookService: BookService
+  ) {}
 
   reserveBook() {
-    this.dialogRef.close({
-      book: this.data.book,
-      email: this.email,
-      message: 'Book reserved successfully',
-    });
-  }
+    const currentDate = new Date();
+    const isoDateString = currentDate.toISOString();
 
-  close() {
-    this.dialogRef.close();
+    const updatedBook: Book = {
+      ...this.data.book,
+      available: false,
+      lastReservedDate: isoDateString,
+      reservedBy: this.email,
+    };
+
+    this.bookService.updateBook(updatedBook).subscribe(_ =>this.dialogRef.close(updatedBook));
   }
 }
