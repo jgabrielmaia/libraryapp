@@ -3,7 +3,7 @@
   
     <!-- Add New Book Form -->
     <div class="add-book-form">
-      <form (ngSubmit)="onAddNewBook()">
+      <form (ngSubmit)="onAddNewBook()" [formGroup]="newBookForm">
         <label for="name">Name:</label>
         <input type="text" id="name" formControlName="name">
   
@@ -24,9 +24,9 @@
             <th>Cover</th>
             <th>Name</th>
             <th>Author</th>
-            <th>Available</th>
             <th>Last Reserved Date</th>
             <th>Last Reserved By</th>
+            <th>Available</th>
           </tr>
         </thead>
         <tbody>
@@ -34,20 +34,18 @@
             <td><img class="book-cover" [src]="book.cover" alt="{{book.name}} from {{book.author}}"></td>
             <td>{{ book.name }}</td>
             <td>{{ book.author }}</td>
-            <td><input type="checkbox" [checked]="book.available" /></td>
             <td>{{ book.lastReservedDate | date }}</td>
             <td>{{ book.reservedBy }}</td>
+            <td><input type="checkbox" [checked]="book.available" (change)="onSaveBook(book)"/></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="edit-book-form">
+    <!-- <div class="edit-book-form">
       <form (ngSubmit)="onSaveBook()">
-        <!-- Your form fields go here -->
-        <button type="submit">Save</button>
       </form>
       <button class="floating-save-button" (click)="onSaveBook()"><i class="fa fa-save"></i></button>
-    </div>
+    </div> -->
     
   </div>

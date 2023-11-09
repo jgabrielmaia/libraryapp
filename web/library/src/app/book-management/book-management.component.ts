@@ -16,11 +16,8 @@ export class BookManagementComponent implements OnInit {
     this.newBookForm = this.fb.group({
       name: ['', Validators.required],
       author: ['', Validators.required],
-      url: [''],
-      cover: [''],
+      cover: ['', Validators.required],
       available: [true],
-      lastReservedDate: [null],
-      reservedBy: [''],
     });
   }
 
@@ -34,6 +31,7 @@ export class BookManagementComponent implements OnInit {
   onAddNewBook() {
     if (this.newBookForm.valid) {
       const newBook: Book = this.newBookForm.value;
+      console.log(newBook);
       this.bookService.addBook(newBook).subscribe((addedBook) => {
         // Handle success, e.g., display a message or reset the form
         this.newBookForm.reset();
@@ -42,11 +40,12 @@ export class BookManagementComponent implements OnInit {
     }
   }
 
-  onSaveBook() {
-    return true;
-  }
+  onSaveBook(book: Book) {
+    if(book.id != undefined){
+      console.log({...book, available: !book.available})
+      this.bookService.isBookAvailable(book?.id, !book.available).subscribe((addedBook) => {
 
-  editBook(book: Book) {
-    // Implement logic to open an edit form or navigate to an edit book component.
+      });
+    }
   }
 }

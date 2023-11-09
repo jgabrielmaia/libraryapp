@@ -39,6 +39,21 @@ app.MapGet("/", (HttpContext context) =>
     return Results.StatusCode(StatusCodes.Status302Found);
 });
 
+app.MapPost("/api/books", async (HttpContext context, [FromBody] Book newBook) =>
+{
+    if (newBook == null)
+    {
+        return Results.BadRequest("Invalid book data");
+    }
+
+    // Let MongoDB generate a unique ObjectId for the new book
+    newBook.Id = ObjectId.GenerateNewId().ToString();
+
+    await collection.InsertOneAsync(newBook);
+
+    // Return a 201 Created status code along with the location of the newly created resource.
+    return Results.StatusCode(StatusCodes.Status201Created);
+});
 
 app.MapPut("/api/books/{id}", async (string id, [FromBody] Book updatedBook) =>
 {
@@ -57,6 +72,21 @@ app.MapDelete("/api/books/{id}", async (string id) =>
 {
     var result = await collection.DeleteOneAsync(b => b.Id == id);
     return result.DeletedCount == 1 ? Results.NoContent() : Results.NotFound("Book not found");
+});
+
+app.MapPut("/api/books/{id}/availability", async (string id, [FromBody] bool isAvailable) =>
+{
+    var existingBook = await collection.Find(b => b.Id == id).FirstOrDefaultAsync();
+    if (existingBook is null)
+    {
+        return Results.NotFound("Book not found");
+    }
+
+    existingBook.Available = isAvailable;
+
+    await collection.ReplaceOneAsync(b => b.Id == id, existingBook);
+
+    return Results.NoContent();
 });
 
 app.UseCors();
