@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var client = new MongoClient("mongodb://localhost:27017");
+var client = new MongoClient("mongodb://library-db:27017");
 var database = client.GetDatabase("booksDB");
 var collection = database.GetCollection<Book>("books");
 

@@ -1,9 +1,41 @@
 version: '3'
 services:
-  mongo:
+  library-app:
+    container_name: library-app
+    build:
+      context: ./web/library
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "4200:80"
+    depends_on:
+      - library-api
+    networks:
+      - libraryapp-network
+
+  library-api:
+    container_name: library-api
+    build:
+      context: ./backend/BookApi
+      dockerfile: Dockerfile
+    ports:
+      - "7227:80"
+    networks:
+      - libraryapp-network
+    depends_on:
+      - library-database
+    environment:
+      - MONGO_CONNECTION_STRING=mongodb://library-db:27017
+
+  library-database:
     image: mongo
-    container_name: mongodb
+    container_name: library-db
     ports:
       - "27017:27017"
     volumes:
-      -  ./database/scripts/:/docker-entrypoint-initdb.d/
+      - ./database/data:/data/db
+      - ./database/scripts/:/docker-entrypoint-initdb.d/
+    networks:
+      - libraryapp-network
+
+networks:
+  libraryapp-network:
