@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../model/book';
 import { ObjectId } from 'mongodb';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'http://127.0.0.1:5281/api';
+  private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) { }
 
