@@ -1,175 +1,256 @@
-db = new Mongo().getDB("booksDB");
-
-db.createCollection("books", { capped: false });
-
+db = new Mongo().getDB('booksDB');
+db.createCollection('books', { capped: false });
 db.books.insert([
   {
-    name: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    cover:
-      "https://img.wook.pt/images/to-kill-a-mockingbird-harper-lee/MXw0NTI2NzM3fDI5NDI5Mzl8MTY0Njc1ODQ0ODAwMA==/500x",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "HomoDeus",
+    "author": "Yuval Noah Harari",
+    "requestedBy": "José Brito",
+    "checkoutDate": "2023-11-13T00:00:00",
+    "returnDate": "2023-12-13T00:00:00"
   },
   {
-    name: "1984",
-    author: "George Orwell",
-    cover:
-      "https://img.bertrand.pt/images/1984-george-orwell/NDV8MjUzMjQ3NjN8MjE1NTAzNzl8MTYyOTcyOTI5MDAwMA==/500x",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "requestedBy": "Diogo Espregueira",
+    "checkoutDate": "2023-11-08T00:00:00",
+    "returnDate": "2023-12-08T00:00:00"
   },
   {
-    name: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    cover:
-      "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781524879761/the-great-gatsby-9781524879761_hr.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "requestedBy": "André Pinto",
+    "checkoutDate": "2023-11-09T00:00:00",
+    "returnDate": "2023-12-11T00:00:00"
   },
   {
-    name: "Pride and Prejudice",
-    author: "Jane Austen",
-    cover:
-      "https://cdn.kobo.com/book-images/08ba5a67-f48d-420e-be8e-6de7a73b7d85/1200/1200/False/pride-prejudice-13.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "requestedBy": "Diogo Ferreira",
+    "checkoutDate": "2023-11-09T00:00:00",
+    "returnDate": "2023-12-11T00:00:00"
   },
   {
-    name: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    cover:
-      "https://m.media-amazon.com/images/I/91ycNzZu1mL._AC_UF1000,1000_QL80_.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Principles",
+    "author": "Ray Dalio",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Harry Potter and the Sorcerer's Stone",
-    author: "J.K. Rowling",
-    cover:
-      "https://frugalbookstore.net/cdn/shop/products/sorcerer_s.jpg?v=1675226870",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Leaders Eat Last",
+    "author": "Simon Sinek",
+    "requestedBy": "Luiza Moreira",
+    "checkoutDate": "2023-11-20T00:00:00",
+    "returnDate": "2023-12-20T00:00:00"
   },
   {
-    name: "The Lord of the Rings: The Return of the King",
-    author: "J.R.R. Tolkien",
-    cover:
-      "https://images.penguinrandomhouse.com/cover/9780593500507",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Can't Hurt Me: Master Your Mind and Defy the Odds",
+    "author": "David Goggins",
+    "requestedBy": "João Moreira",
+    "checkoutDate": "2023-11-07T00:00:00",
+    "returnDate": "2023-12-07T00:00:00"
   },
   {
-    name: "The Hobbit",
-    author: "J.R.R. Tolkien",
-    cover:
-      "https://cdn.waterstones.com/bookjackets/large/9780/2611/9780261103344.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Authentic Happiness",
+    "author": "Martin Seligman",
+    "requestedBy": "Vishad Vyas",
+    "checkoutDate": "2023-11-08T00:00:00",
+    "returnDate": "2023-12-08T00:00:00"
   },
   {
-    name: "Moby-Dick",
-    author: "Herman Melville",
-    cover:
-      "https://www.guerraepaz.pt/wp-content/uploads/2023/03/capa_Moby-Dick__2-edicao_300dpi-scaled.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "What Makes a Leader (Not available yet)",
+    "author": "Daniel Goleman",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "The Da Vinci Code",
-    author: "Dan Brown",
-    cover:
-      "https://m.media-amazon.com/images/I/91Q5dCjc2KL._AC_UF1000,1000_QL80_.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Empathy",
+    "author": "Roman Krznaric",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Clean Code: A Handbook of Agile Software Craftsmanship",
-    author: "Robert C. Martin",
-    cover:
-      "https://eximia.co/wp-content/uploads/sites/2/2020/03/51d1qVhmAmL.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Blink",
+    "author": "Malcom Gladwell",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Design Patterns: Elements of Reusable Object-Oriented Software",
-    author: "Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides",
-    cover:
-      "https://m.media-amazon.com/images/I/81gtKoapHFL._AC_UF1000,1000_QL80_.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Rework",
+    "author": "Jason Fried, David Heinemeier Hansson",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Introduction to the Theory of Computation",
-    author: "Michael Sipser",
-    cover:
-      "https://m.media-amazon.com/images/I/71rMsIS8vDL._AC_UF1000,1000_QL80_.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "The art of the start",
+    "author": "Guy Kawasaki",
+    "requestedBy": "Inês Ramos",
+    "checkoutDate": "2023-11-23T00:00:00",
+    "returnDate": "2023-12-25T00:00:00"
   },
   {
-    name: "Cracking the Coding Interview",
-    author: "Gayle Laakmann McDowell",
-    cover:
-      "https://www.bokay.pt/wp-content/uploads/2022/04/Cracking-the-Coding-Interview.png",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Clean Code - A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "requestedBy": "Bernardo Lopes",
+    "checkoutDate": "2023-11-10T00:00:00",
+    "returnDate": "2023-12-11T00:00:00"
   },
   {
-    name: "Code Complete: A Practical Handbook of Software Construction",
-    author: "Steve McConnell",
-    cover:
-      "https://m.media-amazon.com/images/I/51HhdUfMzCL._SY445_SX342_.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Software Estimation: Demystifying the Black Art (Developer Best Practices)",
+    "author": "Steve McConnell",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "The Pragmatic Programmer: Your Journey to Mastery",
-    author: "Andrew Hunt and David Thomas",
-    cover:
-      "https://miro.medium.com/v2/resize:fit:384/1*WMCABpYvg7cZjh0DZZpvwg.jpeg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Fundamentals of Software Architecture - An Engineering Approach",
+    "author": "Mark Richards, Neal Ford",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "The Mythical Man-Month: Essays on Software Engineering",
-    author: "Frederick P. Brooks Jr.",
-    cover:
-      "https://m.media-amazon.com/images/I/71fCJWIx4UL._AC_UF1000,1000_QL80_.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "Go Design Patterns",
+    "author": "Mario Castro Contreras",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Structure and Interpretation of Computer Programs",
-    author: "Harold Abelson and Gerald Jay Sussman",
-    cover:
-      "https://img.wook.pt/images/structure-and-interpretation-of-computer-programs-gerald-jay-sussman/MXwxODYyOTh8MjM1OTU2fDE2ODMwNTk5MTEwMDA=/500x",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "Design Patterns in C#",
+    "author": "Steven John Metsker",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "The Art of Computer Programming",
-    author: "Donald E. Knuth",
-    cover:
-      "https://m.media-amazon.com/images/I/61tIrzRmFdL._AC_UF1000,1000_QL80_.jpg",
-    available: true,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
+    "title": "NoEstimates: How To Measure Project Progress Without Estimating",
+    "author": "Vasco Duarte",
+    "requestedBy": "Filipe Figueiredo",
+    "checkoutDate": null,
+    "returnDate": null
   },
   {
-    name: "Introduction to Algorithms",
-    author:
-      "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein",
-    cover:
-      "https://m.media-amazon.com/images/I/61TX9gJwCDL._AC_UF1000,1000_QL80_.jpg",
-    available: false,
-    lastReservedDate: "2023-11-07T15:30:00.000Z",
-    reservedBy: 'reserver@reservingbooks.com',
+    "title": "The Coaching Habit  (Not available yet)",
+    "author": "Michael Bungay Stanier",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
   },
+  {
+    "title": "Working with Emotional Intelligence",
+    "author": "Daniel Goleman",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Team Topologies: Organizing Business and Technology Teams for Fast Flow",
+    "author": "Manuel Pais e Matthew Skelton",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Pragmatic Developer",
+    "author": "Andy Hunt, Dave Thomas",
+    "requestedBy": "Vicente Espinha",
+    "checkoutDate": "2023-11-10T00:00:00",
+    "returnDate": "2023-12-11T00:00:00"
+  },
+  {
+    "title": "The Kubernetes Book",
+    "author": "Nigel Poulton",
+    "requestedBy": "João Roque",
+    "checkoutDate": "2023-11-06T00:00:00",
+    "returnDate": "2023-12-06T00:00:00"
+  },
+  {
+    "title": "Nudge",
+    "author": "Richard H. Thaler e Cass R. Sunstein",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Drive",
+    "author": "Daniel Pink",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Outliers",
+    "author": "Malcom Gladwell",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "The Burnout Society",
+    "author": "Byung-Chul Han",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Who Moved My Cheese",
+    "author": "Spencer Johnson",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Selling to Big Companies",
+    "author": "Jill Konrath",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "The Sales Development Playbook",
+    "author": "Trish Bertuzzi",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "HBR Guideline to Beating Burnout",
+    "author": "Harvard Business Review Press",
+    "requestedBy": "Ágata Faria",
+    "checkoutDate": "2023-11-14T00:00:00",
+    "returnDate": "2023-12-14T00:00:00"
+  },
+  {
+    "title": "Creating Contagious Leadership: 5 Habits that Inspire a Leadership Culture",
+    "author": "John Hersey",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "O Código do Sucesso",
+    "author": "Ron Friedman",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  },
+  {
+    "title": "Manual de Vendas",
+    "author": "Tom Hopkins",
+    "requestedBy": NaN,
+    "checkoutDate": null,
+    "returnDate": null
+  }
 ]);
