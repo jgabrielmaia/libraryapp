@@ -10,24 +10,36 @@ import { BookService } from '../services/book.service';
 })
 export class ReserveModalComponent {
   email: string = '';
+  returnDate: Date | null = null;
+  minDate: Date | null = null;
+  maxDate: Date | null = null;
 
   constructor(
     public dialogRef: MatDialogRef<ReserveModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { book: Book },
     public bookService: BookService
-  ) {}
+  ) {
+    const today = new Date();
+    this.minDate = today;
+    this.maxDate = new Date(
+      today.getFullYear(), 
+      today.getMonth() + 3, 
+      today.getDate());
+  }
 
   reserveBook() {
     const currentDate = new Date();
+
     const isoDateString = currentDate.toISOString();
 
     const updatedBook: Book = {
       ...this.data.book,
       available: false,
-      lastReservedDate: isoDateString,
-      reservedBy: this.email,
+      checkoutDate: isoDateString,
+      requestedBy: this.email,
+      returnDate: this.returnDate?.toISOString(),
     };
 
-    this.bookService.updateBook(updatedBook).subscribe(_ =>this.dialogRef.close(updatedBook));
+    this.bookService.updateBook(updatedBook).subscribe(_ => this.dialogRef.close(updatedBook));
   }
 }

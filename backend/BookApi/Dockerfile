@@ -22,6 +22,9 @@ WORKDIR /app
 # Copy the published files from the 'publish' stage
 COPY --from=publish /app/publish .
 
+# Set the ASPNETCORE_ENVIRONMENT environment variable to Production
+ENV ASPNETCORE_ENVIRONMENT Production
+
 # Expose ports and set the entry point
 EXPOSE 80
 EXPOSE 443

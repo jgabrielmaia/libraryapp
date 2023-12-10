@@ -1,9 +1,11 @@
 <div class="book" [ngClass]="{'inactive': !book.available}" (click)="openReserveModal()">
-    <img [src]="book.cover" alt="Cover of the book"/>
+    <img [src]="book.cover" alt="Cover of the book" />
     <div class="book-details">
         <div class="book-title">{{book.name}}</div>
         <div class="book-author">by {{book.author}}</div>
-        <div *ngIf="!book.available && book.lastReservedDate" class="reserved-info">Reserved in {{ book.lastReservedDate | date: 'yyyy-MM-dd' }}</div>
+        <div *ngIf="!book.available && book.checkoutDate !== '0001-01-01T00:00:00'" class="requested-info">Requested in
+            {{ book.checkoutDate | date: 'yyyy-MM-dd' }}</div>
+        <div *ngIf="!book.available && book.returnDate !== '0001-01-01T00:00:00'" class="requested-info">To be returned
+            in {{ book.returnDate | date: 'yyyy-MM-dd' }}</div>
     </div>
 </div>
-  

@@ -19,9 +19,12 @@ public class Book
     [BsonElement("available")]
     public bool Available { get; set; }
     
-    [BsonElement("lastReservedDate")]
-    public DateTime LastReservedDate { get; set; }
+    [BsonElement("checkoutDate")]
+    public DateTime checkoutDate { get; set; }
 
-    [BsonElement("reservedBy")]
-    public string ReservedBy { get; set; }
+    [BsonElement("returnDate")]
+    public DateTime returnDate { get; set; }
+
+    [BsonElement("requestedBy")]
+    public string RequestedBy { get; set; }
 }

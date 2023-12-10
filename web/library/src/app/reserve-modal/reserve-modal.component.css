@@ -1,3 +1,7 @@
 .book-details h1, h3{
     line-height: 1.01;
 }
+
+.return-date-picker {
+    padding: 24px;
+}

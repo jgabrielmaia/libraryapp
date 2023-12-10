@@ -7,6 +7,7 @@ export interface Book {
     author: string;
     cover: string;
     available: boolean;
-    lastReservedDate?: string;
-    reservedBy?: string;
+    checkoutDate?: string;
+    returnDate?: string;
+    requestedBy?: string;
 }

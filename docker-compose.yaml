@@ -22,11 +22,11 @@ services:
     networks:
       - libraryapp-network
     depends_on:
-      - library-database
+      - library-db
     environment:
       - MONGO_CONNECTION_STRING=mongodb://library-db:27017
 
-  library-database:
+  library-db:
     image: mongo
     container_name: library-db
     ports:

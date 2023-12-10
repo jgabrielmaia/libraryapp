@@ -24,8 +24,8 @@
             <th>Cover</th>
             <th>Name</th>
             <th>Author</th>
-            <th>Last Reserved Date</th>
-            <th>Last Reserved By</th>
+            <th>Checkout Date</th>
+            <th>Checkout By</th>
             <th>Available</th>
           </tr>
         </thead>
@@ -34,8 +34,8 @@
             <td><img class="book-cover" [src]="book.cover" alt="{{book.name}} from {{book.author}}"></td>
             <td>{{ book.name }}</td>
             <td>{{ book.author }}</td>
-            <td>{{ book.lastReservedDate | date }}</td>
-            <td>{{ book.reservedBy }}</td>
+            <td>{{ book.checkoutDate | date }}</td>
+            <td>{{ book.requestedBy }}</td>
             <td><input type="checkbox" [checked]="book.available" (change)="onSaveBook(book)"/></td>
           </tr>
         </tbody>

@@ -4,7 +4,11 @@ using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var client = new MongoClient("mongodb://library-db:27017");
+builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
+var connectionString = builder.Configuration.GetConnectionString("MongoDBConnection");
+
+var client = new MongoClient(connectionString);
 var database = client.GetDatabase("booksDB");
 var collection = database.GetCollection<Book>("books");
 
@@ -19,6 +23,8 @@ builder.Services.AddCors(options =>
             .AllowCredentials();
     });
 });
+
+Console.WriteLine("Connection string", connectionString);
 
 var app = builder.Build();
 
