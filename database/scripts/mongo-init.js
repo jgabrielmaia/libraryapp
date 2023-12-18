@@ -11,7 +11,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-13T00:00:00.000Z",
     returnDate: "2023-11-12T00:00:00.000Z",
-    requestedBy: "José Brito",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Atomic Habits",
@@ -21,7 +21,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Diogo Espregueira",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Rich Dad Poor Dad",
@@ -31,7 +31,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "André Pinto",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "The 7 Habits of Highly Effective People",
@@ -41,7 +41,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Diogo Ferreira",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Principles",
@@ -58,7 +58,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Luiza Moreira",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Can't Hurt Me: Master Your Mind and Defy the Odds",
@@ -68,7 +68,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "João Moreira",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Authentic Happiness",
@@ -78,7 +78,7 @@ db.books.insert([
     available: true,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Vishad Vyas",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "What Makes a Leader",
@@ -88,7 +88,7 @@ db.books.insert([
     available: false,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Vishad Vyas",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Empathy",
@@ -105,7 +105,7 @@ db.books.insert([
     available: false,
     checkoutDate: "2023-11-08T00:00:00.000Z",
     returnDate: "2023-12-08T00:00:00.000Z",
-    requestedBy: "Isabel Lopes",
+    requestedBy: "[REDACTED]",
   },
   {
     name: "Rework",
@@ -119,14 +119,14 @@ db.books.insert([
     author: "Guy Kawasaki",
     cover:
       "https://m.media-amazon.com/images/I/71SNTwwXbVL._AC_UF1000,1000_QL80_.jpg",
-    available: false,    requestedBy: "Inês Ramos",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "Clean Code - A Handbook of Agile Software Craftsmanship",
     author: "Robert C. Martin",
     cover:
       "https://m.media-amazon.com/images/I/51E2055ZGUL._AC_UF1000,1000_QL80_.jpg",
-    available: false,    requestedBy: "Bernardo Lopes",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "Software Estimation: Demystifying the Black Art (Developer Best Practices)",
@@ -189,7 +189,7 @@ db.books.insert([
     author: "Andy Hunt, Dave Thomas",
     cover:
       "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/tpp20.jpg",
-    available: false,    requestedBy: "Vicente Espinha",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "The Kubernetes Book",
@@ -217,21 +217,21 @@ db.books.insert([
     author: "Malcom Gladwell",
     cover:
       "https://m.media-amazon.com/images/I/91lYcUJ8JsL._AC_UF1000,1000_QL80_.jpg",
-    available: false,    requestedBy: "Nigel Poulton ",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "The Burnout Society",
     author: "Byung-Chul Han",
     cover:
       "https://m.media-amazon.com/images/I/71sZBzlpXsL._AC_UF1000,1000_QL80_.jpg",
-    available: false,    requestedBy: "Nigel Poulton ",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "Who Moved My Cheese",
     author: "Spencer Johnson",
     cover:
       "https://m.media-amazon.com/images/I/51oe4MOB9fL.jpg",
-    available: false,    requestedBy: "Nigel Poulton ",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "Thinking, Fast and Slow",
@@ -259,7 +259,7 @@ db.books.insert([
     author: "Harvard Business Review Press",
     cover:
       "https://m.media-amazon.com/images/I/51I0ija3DsL._AC_UF1000,1000_QL80_.jpg",
-    available: false,    requestedBy: "Ágata Faria",
+    available: false,    requestedBy: "[REDACTED]",
   },
   {
     name: "Creating Contagious Leadership: 5 Habits that Inspire a Leadership Culture",
